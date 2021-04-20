@@ -30,7 +30,15 @@ const getActiveProducts = (req,res) =>{
 
 }
 
-const getPriceBetween = (req,res)
+const getPriceBetween = (req,res) =>{
+
+    Product.find({"details.price":{$lt:150,$gt:30}})
+    .then(result =>{
+        res.send(result)
+    })
+    .catch(err => console.log(err))
+
+}
 
 
 // $gt
@@ -38,7 +46,8 @@ const getPriceBetween = (req,res)
 module.exports = {
     getAllProducts,
     getSpecificProduct,
-    getActiveProducts
+    getActiveProducts,
+    getPriceBetween
 }
 
 

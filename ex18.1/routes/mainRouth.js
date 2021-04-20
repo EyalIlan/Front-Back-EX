@@ -11,5 +11,7 @@ router.get('/product/:id',MainController.getSpecificProduct)
 
 router.get('/active',MainController.getActiveProducts)
 
+router.get('/price',MainController.getPriceBetween)
+
 
 module.exports = router
